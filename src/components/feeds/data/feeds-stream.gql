@@ -1,5 +1,5 @@
 query feedStream {
-  feedStream {
+  feedStream @stream(initialCount: 20) {
     id
     title
     description

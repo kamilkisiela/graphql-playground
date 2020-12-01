@@ -11,11 +11,8 @@ export const feedResolver: ResolverFn<
   return await context.feeds();
 };
 
-export const feedStreamResolver: ResolverFn<
-  Feed[],
-  object,
-  IGraphQLContext,
-  object
-> = async (_: object, __: object, context: IGraphQLContext) => {
-  return await context.feedsStream();
+export const feedStreamResolver = (_: {}, __: {}, context: IGraphQLContext) => {
+  const stream = context.feedsStream();
+  console.log('stream', stream);
+  return stream;
 };

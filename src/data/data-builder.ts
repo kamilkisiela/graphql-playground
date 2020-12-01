@@ -21,7 +21,7 @@ function createPath(result: { path: Array<string | number> }): string {
     const sep = typeof key === 'string' && path.endsWith(']') ? '.' : '';
     const value = typeof key === 'string' ? key : `[${key}]`;
     return [path, sep, value].join('');
-  }, '$.');
+  }, '');
 }
 
 function hasPath<T>(
